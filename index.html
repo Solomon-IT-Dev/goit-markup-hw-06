@@ -437,6 +437,22 @@
                         </li>
                     </ul>
                 </div>
+
+                <div class="subscription-box">
+                    <h3 class="title">Подпишитесь на рассылку</h3>
+
+                    <form class="footer-form js-speaker-form">        
+                            <input type="email" name="mail" placeholder="E-mail" class="form-input" required>
+                            <button type="submit" class="button primary">
+                                Подписаться
+                                <svg class="icon-send" width="24" height="24">
+                                    <use href="./images/icons.svg#icon-send"></use>
+                                </svg>
+                            </button>
+                    </form>
+                    
+                </div>
+
             </div>
         </footer>
             
@@ -448,13 +464,59 @@
                         <use href="./images/icons.svg#icon-close"></use>   
                     </svg>
                 </button>
-                <p>
-                    <strong>!!! ТУТ БУДУТ <br>поля для заполнения</strong>
-                </p>
+
+                <!-- Форма -->
+                <form class="form js-speaker-form">
+                    <h2 class="form-title">Оставьте свои данные, мы вам перезвоним</h2>
+
+                    <div class="form-field">
+                        <label for="name" class="form-label">Имя</label>
+                        <input type="text" name="name" id="name" placeholder=" " class="form-input" required>
+                        <div class="icon-box">
+                            <svg class="icon-form" width="12" height="12">
+                                <use href="./images/icons.svg#icon-form-name"></use>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="tel" class="form-label">Телефон</label>
+                        <input type="tel" name="tel" id="tel" placeholder=" " class="form-input" required>
+                        <div class="icon-box">
+                            <svg class="icon-form" width="13" height="13">
+                                <use href="./images/icons.svg#icon-form-phone"></use>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="mail" class="form-label">Почта</label>
+                        <input type="email" name="mail" id="mail" placeholder=" " class="form-input" required>
+                        <div class="icon-box">
+                            <svg class="icon-form" width="15" height="12">
+                                <use href="./images/icons.svg#icon-form-mail"></use>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="comment" class="form-label">Комментарий</label>
+                        <textarea name="comment" id="comment" rows="6" placeholder="Введите текст" class="form-input comment"></textarea>
+                    </div>
+
+                    <label class="checkbox-field">
+                        <input type="checkbox" name="agreement" value="Соглашаюсь с рассылкой и принимаю Условия договора" class="checkbox-input visually-hidden" required>
+                        <span class="checkbox"></span>
+                        <span class="checkbox-label">Соглашаюсь с рассылкой и принимаю <a href="#" class="agreement link">Условия договора</a></span>
+                    </label>
+
+                    <button type="submit" class="button primary">Отправить</button>
+                </form>
             </div>
         </div>
 
         <script src="./js/modal.js"></script>
+        <script src="./js/speaker-form.js"></script>
 
     </body>
 

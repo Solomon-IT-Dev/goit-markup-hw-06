@@ -9,29 +9,33 @@
   --primary-white-color: #ffffff;
   --primary-black-color: #000000;
   --additional-color: #2196f3;
+  --btn-hover-color: #188CE8;
   --primary-bg-color: #f5f4fa;
   --secondary-bg-color: #2f303a;
   --icon-color: #afb1b8;
+  --form-border-color: rgba(33, 33, 33, 0.2);
 }
 
 /* Контейнер */
 .container {
+  width: 1200px;
+
   margin-left: auto;
   margin-right: auto;
-  width: 1200px;
   padding-left: 15px;
   padding-right: 15px;
 }
 
 /*Общее наследование*/
 body {
-  background-color: var(--primary-white-color);
-  color: var(--primary-text-color);
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.7;
   letter-spacing: 0.03em;
+
+  background-color: var(--primary-white-color);
+  color: var(--primary-text-color);
 }
 
 /* Картинки */
@@ -58,23 +62,27 @@ img {
 /* Скрытый контент */
 .visually-hidden {
   position: absolute;
+
   width: 1px;
   height: 1px;
+
   margin: -1px;
   padding: 0;
   border: 0;
+
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
 
 /*Логотип*/
 .logo {
-  color: var(--additional-color);
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
   letter-spacing: 0.03em;
+
+  color: var(--additional-color);
 }
 
 .logo-addition {
@@ -87,12 +95,12 @@ img {
 
 /*Шапка*/
 .page-header {
-  border-bottom: 1px solid #ECECEC;
-
-  background-color: var(--primary-white-color);
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
+  border-bottom: 1px solid #ECECEC;
+  background-color: var(--primary-white-color);
 }
 
 /*Навигация*/ 
@@ -143,8 +151,8 @@ img {
   width: 100%;
   height: 4px;
 
-  background-color: var(--additional-color);
   border-radius: 2px;
+  background-color: var(--additional-color);
 
   transform: none;
 }
@@ -158,8 +166,8 @@ img {
   width: 100%;
   height: 4px;
 
-  background-color: var(--additional-color);
   border-radius: 2px;
+  background-color: var(--additional-color);
 
   transform: scaleX(0);
   transition-property: transform;
@@ -205,13 +213,17 @@ img {
 
 /*Герой*/
 .hero {
-  padding-top: 200px;
-  padding-bottom: 200px;
   max-width: 1600px;
   min-height: 600px;
+
+  padding-top: 200px;
+  padding-bottom: 200px;
   margin-left: auto;
   margin-right: auto;
+  
+  text-align: center;
 
+  background-color: var(--secondary-bg-color);
   background-image: linear-gradient(
       to right, 
       rgba(47, 48, 58, 0.4), 
@@ -221,72 +233,85 @@ img {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-
-  background-color: var(--secondary-bg-color);
-  text-align: center;
 }
 
 .hero-title {
   max-width: 696px;
+
   margin: 0 auto 30px;
 
-  color: var(--primary-white-color);
   font-weight: 900;
   font-size: 44px;
   line-height: 1.37;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+
+  color: var(--primary-white-color);
 }
 
 /*Кнопки*/
 .button {
   display: inline-block;
-  border: 0;
-  border-radius: 4px;
-
+  
   cursor: pointer;
   font-family: inherit;
   font-size: 16px;
+
+  border: 0;
+  border-radius: 4px;
 }
 
 .button.primary {
-  padding: 10px 32px;
   min-width: 200px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
+  padding: 10px 32px;
   
-  background-color: var(--additional-color);
-  color: var(--primary-white-color);
   font-weight: 700;
   line-height: 1.88;
-  display: flex;
-  align-items: center;
   letter-spacing: 0.06em;
 
-  transition-property: background-color;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15),
+              inset 0px 0px 0px 0px rgba(0, 0, 0, 0.3);
+  background-color: var(--additional-color);
+  color: var(--primary-white-color);
+  
+  transform: scale(1);
+  transition-property: background-color, box-shadow, transform;
   transition-duration: 250ms;
   transition-timing-function: var(--timing-function);
 }
 
 .button.primary:hover,
 .button.primary:focus {
-  background-color: #1976d2;
+  background-color: var(--btn-hover-color);
 }
 
 .button.primary:active {
-  box-shadow: inset 0 0 12px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.15),
+              inset 0px 0px 20px 8px rgba(0, 0, 0, 0.3);
+  transform: scale(0.9);
 }
 
 .filter.button {
   padding: 6px 22px;
 
-  background-color: var(--primary-bg-color);
-  color: var(--title-text-color);
   font-weight: 500;
   line-height: 1.63;
   letter-spacing: 0.03em;
+  
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1),
+              0px 0px 0px rgba(0, 0, 0, 0.08),
+              0px 0px 0px rgba(0, 0, 0, 0.12),
+              inset 0px 0px 0px 0px rgba(0, 0, 0, 0.3);
+  background-color: var(--primary-bg-color);
+  color: var(--title-text-color);
 
-  transition-property: color, background-color, box-shadow;
+  transform: scale(1);
+  transition-property: color, background-color, box-shadow, transform;
   transition-duration: 250ms;
   transition-timing-function: var(--timing-function);
 }
@@ -295,9 +320,18 @@ img {
 .filter.button:focus {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
               0px 1px 2px rgba(0, 0, 0, 0.08),
-              0px 2px 2px rgba(0, 0, 0, 0.12);
+              0px 2px 2px rgba(0, 0, 0, 0.12),
+              inset 0px 0px 0px 0px rgba(0, 0, 0, 0.3);
   background-color: var(--additional-color);
   color: var(--primary-white-color);
+}
+
+.filter.button:active {
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1),
+              0px 0px 0px rgba(0, 0, 0, 0.08),
+              0px 0px 0px rgba(0, 0, 0, 0.12),
+              inset 0px 0px 20px 8px rgba(0, 0, 0, 0.3);
+  transform: scale(0.9);
 }
 
 /*Текстовая часть*/
@@ -314,11 +348,12 @@ img {
   margin-top: 0;
   margin-bottom: 50px;
 
-  color: var(--title-text-color);
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
   text-align: center;
+
+  color: var(--title-text-color);
 }
 
 .features.list {
@@ -338,11 +373,12 @@ img {
   margin-top: 0;
   margin-bottom: 10px;
 
-  color: var(--title-text-color);
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
+
+  color: var(--title-text-color);
 }
 
 .features.list p {
@@ -352,14 +388,15 @@ img {
 
 /* Особенности */
 .feature-box {
+  width: 270px;
+  height: 120px;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 270px;
-  height: 120px;
-  border-radius: 4px;
   margin-bottom: 30px;
-
+  
+  border-radius: 4px;
   background-color: var(--primary-bg-color);
 }
 
@@ -384,11 +421,12 @@ img {
 
   width: 100%;
   height: 70px;
+
   margin-bottom: 0;
   padding-top: 27px;
-  background-color: rgba(47, 48, 58, 0.8);
-
   text-align: center;
+
+  background-color: rgba(47, 48, 58, 0.8);
   color: var(--primary-white-color);
 }
 
@@ -403,15 +441,15 @@ img {
 }
 
 .team-item {
-  overflow: hidden;
   flex-basis: calc((100% - var(--items-gap) * 3) / 4);
+  
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
               0px 1px 1px rgba(0, 0, 0, 0.14),
               0px 2px 1px rgba(0, 0, 0, 0.2);
   border: 0;
   border-radius: 0px 0px 4px 4px;
-
   background-color: var(--primary-white-color);
+  overflow: hidden;
 }
 
 .team.section-box {
@@ -446,13 +484,14 @@ img {
 }
 
 .social.link {
+  width: 44px;
+  height: 44px;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 44px;
-  height: 44px;
+  
   border-radius: 50%;
-
   background-color: var(--primary-white-color);
   color: var(--icon-color);
 
@@ -484,14 +523,15 @@ img {
 }
 
 .client.link {
+  width: 170px;
+  height: 92px;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 170px;
-  height: 92px;
+  
   border: 1px solid var(--icon-color);
   border-radius: 4px;
-
   color: var(--icon-color);
 
   transform: scale(1);
@@ -531,6 +571,7 @@ img {
   flex-basis: calc((100% - var(--items-gap) * 2) / 3);
   margin-right: var(--items-gap);
   margin-bottom: var(--items-gap);
+
   border: 1px solid #EEEEEE;
   overflow: hidden;
 
@@ -570,10 +611,10 @@ img {
 .filter-id {
   margin-top: 0;
   margin-bottom: 0;
-
-  color: var(--primary-text-color);
   font-size: 16px;
   line-height: 1.87;
+
+  color: var(--primary-text-color);
 }
 
 .project-tumb {
@@ -603,9 +644,9 @@ img {
   transform: translateY(100%);
   
   margin: 0 24px;
-  
   font-size: 18px;
   line-height: 1.55;
+
   color: var(--primary-white-color);
 
   transition-property: transform;
@@ -632,9 +673,9 @@ img {
 .address {
   margin-top: 20px;
   margin-bottom: 9px;
+  font-style: inherit;
 
   color: var(--primary-white-color);
-  font-style: inherit;
 }
 
 .page-footer .link {
@@ -654,11 +695,13 @@ img {
 }
 
 .join-box {
-  margin-left: 70px;
   width: 206px;
+  
+  margin-left: 70px;
 }
 
-.join-box .title {
+.join-box .title,
+.subscription-box .title {
   margin-bottom: 20px;
 
   color: var(--primary-white-color);
@@ -688,6 +731,60 @@ img {
   transition-timing-function: var(--timing-function);
 }
 
+.subscription-box {
+  width: 570px;
+  margin-left: auto;
+}
+
+.footer-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-form .form-input {
+  width: 358px;
+  
+  padding-left: 16px;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  background-color: transparent;
+  color: var(--primary-white-color);
+
+  transition-property: background-color, border;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
+}
+
+.footer-form .form-input::placeholder {
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-form .form-input:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--additional-color);
+}
+
+.footer-form .button {
+  margin: 0;
+  padding-left: 28px;
+  padding-right: 28px;
+}
+
+.icon-send {
+  margin-left: 10px;
+
+  fill: var(--primary-white-color);
+}
+
 /* Модальное окно */
 .backdrop {
   position: fixed;
@@ -698,8 +795,8 @@ img {
   height: 100%;
 
   background-color: rgba(0, 0, 0, 0.2);
-
   opacity: 1;
+
   transition-property: opacity;
   transition-duration: 250ms;
   transition-timing-function: var(--timing-function);
@@ -719,11 +816,11 @@ img {
   min-width: 528px;
   min-height: 581px;
 
+  border-radius: 4px;
   background-color: var(--primary-white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
               0px 1px 1px rgba(0, 0, 0, 0.14),
               0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
 
   transition-property: transform;
   transition-duration: 250ms;
@@ -739,18 +836,19 @@ img {
   top: 0;
   right: 0;
 
+  width: 30px;
+  height: 30px;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30px;
-  height: 30px;
   margin-top: 8px;
   margin-right: 8px;
-
-  color: var(--primary-black-color);
-  background-color: var(--primary-white-color);
+  
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
+  background-color: var(--primary-white-color);
+  color: var(--primary-black-color);
 
   transform: scale(1);
   transition-property: color, transform;
@@ -764,13 +862,145 @@ img {
   transform: scale(1.2);
 }
 
+.button.modal-close:active {
+  color: var(--primary-text-color);
+  transform: scale(0.9);
+}
+
 .icon-close {
   fill: currentColor;  
 }
 
-/*! Временная запись */
-.modal p {
-  text-align: center;
+/* Форма */
+.form {
+  margin: 40px;
 }
 
-/** Позиционирование - геометрия - текст - оформление: ПГТО */
+.form-title {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+
+  color: var(--title-text-color);
+}
+
+.form-field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.form-label {
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+}
+
+.form-field .form-input {
+  margin: 0;
+  padding: 12px 42px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+
+  border-radius: 4px;
+  border: 1px solid var(--form-border-color);
+
+  transition-property: border;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
+}
+
+.form-field .form-input::placeholder {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.form-field .form-input:focus {
+  border: 1px solid var(--additional-color);
+}
+
+.icon-box {
+  position: absolute;
+  top: 29px;
+  left: 15px;
+
+  width: 18px;
+  height: 18px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--title-text-color);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
+}
+
+.form-input:focus + .icon-box {
+  color: var(--additional-color);
+}
+
+.icon-box .icon-form {
+  fill: currentColor;
+}
+
+.form-field .form-input.comment {
+  height: 120px;
+
+  padding: 12px 16px;
+
+  resize: none;
+}
+
+.checkbox-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.checkbox {
+  width: 16px;
+  height: 15px;
+  
+  background-image: url(/images/icon-unchecked.svg);
+
+  transition-property: background-image;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
+}
+
+.checkbox-input:focus + .checkbox {
+  background-image: url(/images/icon-unchecked-focus.svg);
+}
+
+.checkbox-input:checked + .checkbox {
+  background-image: url(/images/icon-check.svg);
+}
+
+.checkbox-label {
+  margin-left: 8px;
+}
+
+.agreement.link {
+  text-decoration: underline;
+
+  color: var(--additional-color);
+}
+
+.form .button.primary {
+  margin-top: 30px;
+  padding-left: 55px;
+  padding-right: 55px;
+}
