@@ -974,7 +974,7 @@ img {
   width: 16px;
   height: 15px;
   
-  background-image: url(/images/icon-unchecked.svg);
+  background-image: url(../images/icon-unchecked.svg);
 
   transition-property: background-image;
   transition-duration: 250ms;
@@ -982,11 +982,11 @@ img {
 }
 
 .checkbox-input:focus + .checkbox {
-  background-image: url(/images/icon-unchecked-focus.svg);
+  background-image: url(../images/icon-unchecked-focus.svg);
 }
 
 .checkbox-input:checked + .checkbox {
-  background-image: url(/images/icon-check.svg);
+  background-image: url(../images/icon-check.svg);
 }
 
 .checkbox-label {
